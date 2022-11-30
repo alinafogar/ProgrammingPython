@@ -1,25 +1,33 @@
-class CSVfile('file_name'):
-    def __init__ (self, name):
-            self.name = name
-
-    try:
-        my_file=open('shampoo_sales.csv','r')
-    except Exception as e:
-        print ("Errore: Il file non esiste".format(e))
-
+class CSVFile:
+    
+    def __init__(self, name):
+        self.name = name
+        self.can_read = True
+        try:
+            my_file = open(self.name, 'r')
+            my_file.readline()
+        except Exception as e:
+            self.can_read = False
+            print('Errore in apertura del file: "{}"'.format(e))
+            
     def get_data(self):
         
-        my_list = []
-        if self.my_file == []: 
-            return None 
-        for line in self.my_file:
-            elements = line.split (",")
-            if elements [0] != "Date":
-                my_list.append (elements)
-        self.my_file.close ()
-    
-        return my_list 
+        if not self.can_read:
+            print('Errore, file non aperto o illeggibile')
+            return None
 
+        else:
+            data = []
+            my_file = open(self.name, 'r')
+
+            for line in my_file:
+                
+                elements = line.split(',')
+                elements[-1] = elements[-1].strip()
+                if elements[0] != 'Date':
+                    data.append(elements)
+            my_file.close()
+            return data
 
 my_file=CSVfile('shampo_sales.csv')
 print (my_file.name)

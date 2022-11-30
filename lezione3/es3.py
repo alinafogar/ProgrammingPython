@@ -1,8 +1,8 @@
 def sum_csv(file_name):
     
-    my_file=open('shampoo_sales.csv','r')
+    my_file=open(file_name,'r')
 
-    s=0.0
+    s=0
     
     if my_file==[]:
         return None
@@ -18,6 +18,4 @@ def sum_csv(file_name):
     if s==0:
         return None
 
-    print(s)
-
-sum_csv('shampoo_sales.csv')
+    return s
