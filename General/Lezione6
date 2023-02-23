@@ -1,0 +1,84 @@
+Controlli:
+- is None
+- is not None
+- == '' (meglio di no)
+- se ho 2 tipi: sesso in ['M','F']
+
+Tipi, oggetti e classi
+- isinstance(nome_var, Classe) permette di controllare a livello gerarchico, se è di quella famiglia
+- issubclass(nome_super_classe, nome_sotto_classe) 
+
+Cosa fare se l'input non è corretto:
+1) stampo errore e uso un default per aggirarlo
+2) stampo l'errore e esco (solo nel codice, non nelle funzioni!)
+3) alzo un eccezione (nelle funzioni e negli oggetti) raise Exception('Messaggio di errore') oppure raise Expection('Ho avuto un errore, ecco il parametro che lo ha generato: "{}"'.format(parametro))
+
+Come creo un eccezione: 
+class Errore(Exception)
+    pass
+
+raise Errore('Mona!')
+
+A cosa devo pensare:
+- non trovo il file che dovrei leggere
+- mi passano una riga e non un numero
+- mi chiedono di leggere righe che non ho
+- mi passano un valore non ammissibile
+
+Lezione 7: Testing e unit tests
+
+if output != output noto:
+    errore!
+
+esempio
+
+def somma(a,b):
+return a+b
+
+if not somma(1,1)==2:
+    raise Exception('Test 1+1 non passato')
+
+esempio uniut testing
+
+def somma(a,b):
+return a+b
+
+import unittest
+from lezione7 import somma
+
+class TestSomma(unittest.Testcase):
+
+    def test_somma(self):
+        self.assertEqual(somma(1,1),2)
+        self.assertEqual(somma(1.5,2.5),4)
+
+le funzioni vanno in minuscolo
+
+Lezione 8: creare un modello
+
+classe base che non ha metodi implementati
+
+class Model():
+    def fit(self,data):
+        raise NotImplementedError('Metodo non implementato')
+
+    def predict(self,data):
+        raise NotImplementedError('Metodo non implementato')
+
+estendo la classe e come mi serve implemento il fit o il predict, ad esempio creo solo una classe figlia e vedo se posso fare il fit
+
+Lezione 9: fittare un modello
+
+ho un generico modello, faccio aderire una generica istanza del modello a x
+
+Come fittiamo noi: prenderemo l'incremento medio delle vendite di shampoo su tutto il dataset
+
+Faccio il fit del modello sui mesi precedenti e calcolo l'incremento medio
+Chiamo la predict come prima, ma il risultato lo prendo e lo medio con l'incremento medio dei mesi precedenti
+
+
+
+Lezione 10: valutare un modello
+
+
+

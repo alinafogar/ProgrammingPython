@@ -15,7 +15,7 @@ def sum_csv(file_name):
                 s = s + value
             except:
                 value = None
-    if s==0:
-        return None
+        if s==0:
+            return None
 
     return s

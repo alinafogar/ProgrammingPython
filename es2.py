@@ -4,4 +4,4 @@ def sum_list(my_list):
         return None
     for item in my_list:
         s=s+item
-    print(s)
+    return s

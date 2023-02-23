@@ -1,0 +1,24 @@
+[[package]]
+name = "git-python"
+version = "1.1.1"
+description = "combination and simplification of some useful git commands"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "my-module"
+version = "1.6.2"
+description = "a simple module for printing lists"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "35330acd819ed881fc8b85165f061a12e58860622d8bbecdaeb953bd38e7bf5e"
+
+[metadata.files]
+git-python = []
+my-module = []

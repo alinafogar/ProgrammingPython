@@ -1,0 +1,17 @@
+- Mese decimale x
+- Anno decimale x
+- Anno non presente x
+- Anno negativo x
+- Mese negativo x
+- Anno o mese mancante x
+- Mese non tra 1 e 12 x
+- Valore non positivo x
+- Valore non numerico 
+- Valore decimale x
+- Valore mancante x
+- Riga mancante x
+- Riga duplicata x
+- Enjambement 
+
+
+se i due anni non sono consecutivi alzo un eccezione?
