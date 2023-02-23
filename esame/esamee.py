@@ -129,8 +129,3 @@ def detect_similar_monthly_variations(time_series,years):
             lista.append(False)
             
     return lista
-        
-time_series_file = CSVTimeSeriesFile(name='data.csv')
-time_series = time_series_file.get_data()
-lista=detect_similar_monthly_variations(time_series,[1959,1960])
-print(lista)
